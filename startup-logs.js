@@ -108,6 +108,7 @@ module.exports = function () {
     Todo.addItem('Add advanced paths to the Renderstack, with curves', 'In Progress')
     Todo.addItem('Fix github so its pushing from my acc', 'Done')
     Todo.addItem('Fix the Renderstack so it only applies things when needed', 'Not Started')
+    Todo.addItem('Add basic lines to Renderstack', 'Done')
 
     Todo.fullLogAndPush(
         { infoColor: 'white' },

@@ -1,3 +1,5 @@
+import { symlink } from "original-fs"
+
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
@@ -46,7 +48,13 @@ const render = (() => {
                     ctx.arc(item.x, item.y, item.r, item.startAngle, item.endAngle)
                 else if (mode == 'ellipse')
                     ctx.ellipse(item.x, item.y, item.rx, item.ry, item.rotation, item.startAngle, item.endAngle)
+                else if (mode == 'line') {
+                    ctx.moveTo(item.x1, item.y1)
+                    ctx.lineTo(item.x2, item.y2)
+                }
                 else if (mode == 'path') {
+                    function tx(X) { return (x + X * scale) }
+                    function ty(Y) { return (y + Y * scale) }
                     const x = item.x
                     const y = item.y
                     const scale = item.scale
@@ -55,13 +63,10 @@ const render = (() => {
                     for (const subItem of item.path) {
                         const subMode = subItem
                         const move = subItem.move ?? false
-
-                        if (subMode == 'line' && move) {
-
-                        }
-                        else if (subMode == 'line' && !move) {
-
-                        }
+                        if (subMode == 'line' && move)
+                            ctx.moveTo(tx(lastX + subItem.x), ty(lastY + subItem.y))
+                        else if (subMode == 'line' && !move)
+                            ctx.lineTo(tx(lastX + subItem.x), ty(lastY + subItem.y))
                         else if (subMode == 'arc' && move) {
 
                         }
@@ -73,9 +78,9 @@ const render = (() => {
                         }
                         else if (subMode == 'bezierCurve' && !move) {
                         }
-
-
-                        // ctx.lineTo(x + point.x * scale, y + path[i].y * scale)
+                        else if (subMode == 'move') {
+                            ctx.moveTo(tx(subItem.x), ty(subItem.y))
+                        }
                     }
                 }
                 if (item.fill) {

@@ -1,7 +1,8 @@
 //grab electron
 const { app, BrowserWindow } = require('electron')
 
-const path = require('path');
+//and path
+const path = require('path')
 
 //a place to store the win
 let win
