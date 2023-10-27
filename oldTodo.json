@@ -1,58 +1,10 @@
 [
   {
-    "name": "Setup the RUNE system",
-    "status": "Not Started"
-  },
-  {
-    "name": "Link Github",
-    "status": "Done"
-  },
-  {
     "name": "Setup Electron",
     "status": "Done"
   },
   {
-    "name": "Make the new layers have names",
-    "status": "Not Started"
-  },
-  {
-    "name": "Add todoList",
-    "status": "Done"
-  },
-  {
-    "name": "Add the Color module",
-    "status": "Done"
-  },
-  {
-    "name": "Add many render layers",
-    "status": "Not Started"
-  },
-  {
-    "name": "Add the MoreMath module",
-    "status": "Done"
-  },
-  {
-    "name": "Make the browser invisible",
-    "status": "Done"
-  },
-  {
-    "name": "Add feature to the renderstack modue: Fill Complex shapes",
-    "status": "Done"
-  },
-  {
-    "name": "Make the browser stay on top of the screen",
-    "status": "Done"
-  },
-  {
-    "name": "Make a better colors module",
-    "status": "Done"
-  },
-  {
-    "name": "Add key inputs",
-    "status": "Not Started"
-  },
-  {
-    "name": "Let the mouse / key inputs go thru the browser",
+    "name": "Link Github",
     "status": "Done"
   },
   {
@@ -60,63 +12,7 @@
     "status": "Not Started"
   },
   {
-    "name": "Add feature to the renderstack modue: Glowing",
-    "status": "Done"
-  },
-  {
-    "name": "Give the browser a .js file",
-    "status": "Done"
-  },
-  {
-    "name": "Make the canvas always fill the screen",
-    "status": "Done"
-  },
-  {
-    "name": "Add feature to the renderstack modue: Fill Rect",
-    "status": "Done"
-  },
-  {
-    "name": "Add canvas to the browser",
-    "status": "Done"
-  },
-  {
-    "name": "Create functions to talk browser to node",
-    "status": "Done"
-  },
-  {
-    "name": "Turn the project into an application",
-    "status": "Not Started"
-  },
-  {
-    "name": "Add a way to upload RUNES on the webpage",
-    "status": "Not Started"
-  },
-  {
-    "name": "Create a good name for the runes",
-    "status": "Not Started"
-  },
-  {
-    "name": "Create a hub for all the runes",
-    "status": "Not Started"
-  },
-  {
-    "name": "Give the hub wesite a nice gui",
-    "status": "Not Started"
-  },
-  {
-    "name": "Create a good name for the hub for runes",
-    "status": "Not Started"
-  },
-  {
-    "name": "Sandbox the runes",
-    "status": "Not Started"
-  },
-  {
-    "name": "Add comments to everything",
-    "status": "Done"
-  },
-  {
-    "name": "Switch to the new github",
+    "name": "Add the Color module",
     "status": "Done"
   },
   {
@@ -124,15 +20,7 @@
     "status": "Done"
   },
   {
-    "name": "Give the new layers a z index",
-    "status": "Not Started"
-  },
-  {
-    "name": "Create functions to talk node to browser",
-    "status": "Done"
-  },
-  {
-    "name": "Hide the bar at the top of the browser",
+    "name": "Add the MoreMath module",
     "status": "Done"
   },
   {
@@ -140,35 +28,87 @@
     "status": "Done"
   },
   {
-    "name": "Add feature to the renderstack modue: Fill Circle",
+    "name": "Orginize the project",
     "status": "Done"
   },
   {
-    "name": "Add feature to the renderstack modue: Line Rect",
+    "name": "Setup the RUNE system",
+    "status": "Not Started"
+  },
+  {
+    "name": "Add todoList",
     "status": "Done"
   },
   {
-    "name": "Make the renderstack only render when needed",
+    "name": "Make the browser stay on top of the screen",
+    "status": "Done"
+  },
+  {
+    "name": "Make the browser invisible",
+    "status": "Done"
+  },
+  {
+    "name": "Add key inputs",
     "status": "Not Started"
   },
   {
-    "name": "Make the project auto publish the application",
+    "name": "Give the new layers a z index",
     "status": "Not Started"
+  },
+  {
+    "name": "Hide the bar at the top of the browser",
+    "status": "Done"
+  },
+  {
+    "name": "Add comments to everything",
+    "status": "Done"
   },
   {
     "name": "Hide the electron icon",
     "status": "Done"
   },
   {
-    "name": "Make the node side die if the browser does",
+    "name": "Add feature to the renderstack modue: Fill Circle",
     "status": "Done"
   },
   {
-    "name": "Orginize the project",
+    "name": "Make the project auto publish the application",
+    "status": "Not Started"
+  },
+  {
+    "name": "Make the renderstack only render when needed",
+    "status": "Not Started"
+  },
+  {
+    "name": "Turn the project into an application",
+    "status": "Not Started"
+  },
+  {
+    "name": "Add many render layers",
+    "status": "Not Started"
+  },
+  {
+    "name": "Add feature to the renderstack modue: Gradients",
+    "status": "Done"
+  },
+  {
+    "name": "Switch to the new github",
     "status": "Done"
   },
   {
     "name": "Add feature to the renderstack modue: Line Cirle",
+    "status": "Done"
+  },
+  {
+    "name": "Add feature to the renderstack modue: Line Complex shapes",
+    "status": "Done"
+  },
+  {
+    "name": "Make the new layers have names",
+    "status": "Not Started"
+  },
+  {
+    "name": "Create the acronym for MAGE",
     "status": "Done"
   },
   {
@@ -180,11 +120,31 @@
     "status": "Done"
   },
   {
-    "name": "Add feature to the renderstack modue: Line Complex shapes",
+    "name": "Create functions to talk node to browser",
     "status": "Done"
   },
   {
-    "name": "Create the acronym for MAGE",
+    "name": "Make the canvas always fill the screen",
+    "status": "Done"
+  },
+  {
+    "name": "Give the hub wesite a nice gui",
+    "status": "Not Started"
+  },
+  {
+    "name": "Create a good name for the hub for runes",
+    "status": "Not Started"
+  },
+  {
+    "name": "Create functions to talk browser to node",
+    "status": "Done"
+  },
+  {
+    "name": "Make the node side die if the browser does",
+    "status": "Done"
+  },
+  {
+    "name": "Add canvas to the browser",
     "status": "Done"
   },
   {
@@ -192,35 +152,23 @@
     "status": "Not Started"
   },
   {
-    "name": "Get rid of the bridge",
-    "status": "Canceled"
+    "name": "Give the browser a .js file",
+    "status": "Done"
   },
   {
-    "name": "Give the hub site apis for MAGE",
+    "name": "Let the mouse / key inputs go thru the browser",
+    "status": "Done"
+  },
+  {
+    "name": "Add a way to upload RUNES on the webpage",
     "status": "Not Started"
   },
   {
-    "name": "Create a bridge to go from browser to node, and vice versa",
+    "name": "Add feature to the renderstack modue: Fill Rect",
     "status": "Done"
   },
   {
-    "name": "Make a todolist module that uses files to store the list",
-    "status": "Done"
-  },
-  {
-    "name": "Make console.log from browser redirect to the node side",
-    "status": "Done"
-  },
-  {
-    "name": "Add feature to the renderstack modue: Gradients",
-    "status": "Done"
-  },
-  {
-    "name": "Pass the screen size to the node side when it updates",
-    "status": "Done"
-  },
-  {
-    "name": "Add an api for reading the screen",
+    "name": "Create a good name for the runes",
     "status": "Not Started"
   },
   {
@@ -228,31 +176,39 @@
     "status": "Not Started"
   },
   {
+    "name": "Add feature to the renderstack modue: Glowing",
+    "status": "Done"
+  },
+  {
+    "name": "Add feature to the renderstack modue: Fill Complex shapes",
+    "status": "Done"
+  },
+  {
+    "name": "Add feature to the renderstack modue: Line Rect",
+    "status": "Done"
+  },
+  {
+    "name": "Create a hub for all the runes",
+    "status": "Not Started"
+  },
+  {
+    "name": "Create a bridge to go from browser to node, and vice versa",
+    "status": "Done"
+  },
+  {
+    "name": "Sandbox the runes",
+    "status": "Not Started"
+  },
+  {
     "name": "Add an api for typing",
     "status": "Not Started"
   },
   {
-    "name": "Fix github so its pushing from my acc",
-    "status": "Done"
-  },
-  {
-    "name": "Combine the Renderstack, Complex shapes, and Animations all together as one module",
+    "name": "Give the hub site apis for MAGE",
     "status": "Not Started"
   },
   {
-    "name": "Add rotation to the Renderstack drawing",
-    "status": "Canceled"
-  },
-  {
-    "name": "Create a RUNE for managing other RUNEs",
-    "status": "Not Started"
-  },
-  {
-    "name": "Make the Renderstack rotation args fit to the rest of the system (r0=up,r1/4=right)",
-    "status": "Not Applicable"
-  },
-  {
-    "name": "Create a module for the Renderstack that adds compound shapes",
+    "name": "Pass mouse inputs to the RUNEs",
     "status": "Not Started"
   },
   {
@@ -260,27 +216,99 @@
     "status": "Not Started"
   },
   {
+    "name": "Make a todolist module that uses files to store the list",
+    "status": "Done"
+  },
+  {
+    "name": "Fix the Renderstack so it only applies things when needed",
+    "status": "Not Started"
+  },
+  {
+    "name": "Make require work on the browser side",
+    "status": "Canceled"
+  },
+  {
+    "name": "Add curved lines to the Renderstack",
+    "status": "In Progress"
+  },
+  {
+    "name": "Make the project push to github everytime the todolist gets an item completed",
+    "status": "Done"
+  },
+  {
+    "name": "Add text to the Renderstack",
+    "status": "Done"
+  },
+  {
     "name": "Pass key inputs to the RUNEs",
     "status": "Not Started"
+  },
+  {
+    "name": "Create a module for the Renderstack to add animations",
+    "status": "Not Started"
+  },
+  {
+    "name": "Add an api for reading the screen",
+    "status": "Not Started"
+  },
+  {
+    "name": "Fix github so its pushing from my acc",
+    "status": "Done"
+  },
+  {
+    "name": "Create a RUNE for managing other RUNEs",
+    "status": "Not Started"
+  },
+  {
+    "name": "Make a better colors module",
+    "status": "Done"
   },
   {
     "name": "Make Renderstack gradients x/y relitive to the main object",
     "status": "Done"
   },
   {
-    "name": "Pass mouse inputs to the RUNEs",
+    "name": "Add basic lines to Renderstack",
+    "status": "Done"
+  },
+  {
+    "name": "Make the Renderstack rotation args fit to the rest of the system (r0=up,r1/4=right)",
+    "status": "Not Applicable"
+  },
+  {
+    "name": "Add a clear screen option to Renderstack",
+    "status": "Done"
+  },
+  {
+    "name": "Add line caps",
+    "status": "Done"
+  },
+  {
+    "name": "Create a module for the Renderstack that adds compound shapes",
     "status": "Not Started"
   },
   {
-    "name": "Add a module for creating GUIs with the Renderstack",
+    "name": "Make console.log from browser redirect to the node side",
+    "status": "Done"
+  },
+  {
+    "name": "Make the Renderstack have some kind of scaling options",
     "status": "Not Started"
   },
   {
-    "name": "Add text options to the Renderstack",
+    "name": "Add TLDR to the Todo module",
     "status": "Done"
   },
   {
     "name": "Add a function to set a runes renderstack",
+    "status": "Done"
+  },
+  {
+    "name": "Add advanced paths to the Renderstack",
+    "status": "In Progress"
+  },
+  {
+    "name": "Add clearrects to the Renderstack",
     "status": "Done"
   },
   {
@@ -292,79 +320,11 @@
     "status": "Not Started"
   },
   {
-    "name": "Add curved lines to the Renderstack",
-    "status": "In Progress"
-  },
-  {
-    "name": "Make require work on the browser side",
-    "status": "Canceled"
-  },
-  {
-    "name": "Add TLDR to the Todo module",
-    "status": "Done"
-  },
-  {
-    "name": "Add line caps",
-    "status": "Done"
-  },
-  {
-    "name": "Add a debug mode for the browser",
-    "status": "Done"
-  },
-  {
-    "name": "Add line joins",
-    "status": "Done"
-  },
-  {
-    "name": "Make the Renderstack have some kind of scaling options",
-    "status": "Not Started"
-  },
-  {
     "name": "Make the text wrap in a box",
     "status": "Not Applicable"
   },
   {
-    "name": "Add comments to the Renderstack module",
-    "status": "Not Started"
-  },
-  {
-    "name": "Made errors on the browser go to the node console",
-    "status": "Done"
-  },
-  {
-    "name": "Create a module for the Renderstack to add animations",
-    "status": "Not Started"
-  },
-  {
-    "name": "Make a function to print things in order",
-    "status": "Canceled"
-  },
-  {
-    "name": "Add clearrects to the Renderstack",
-    "status": "Done"
-  },
-  {
-    "name": "Fix the Renderstack so it only applies things when needed",
-    "status": "Not Started"
-  },
-  {
-    "name": "Add advanced paths to the Renderstack, with curves",
-    "status": "In Progress"
-  },
-  {
-    "name": "Add layers to the Renderstack",
-    "status": "Done"
-  },
-  {
-    "name": "Add a way to count the number of lines of code I have written in this file",
-    "status": "Done"
-  },
-  {
-    "name": "Clump the line counter, github pusher, and todolist in one module",
-    "status": "Done"
-  },
-  {
-    "name": "Add text to the Renderstack",
+    "name": "Add a debug mode for the browser",
     "status": "Done"
   },
   {
@@ -372,19 +332,51 @@
     "status": "Not Started"
   },
   {
+    "name": "Add line joins",
+    "status": "Done"
+  },
+  {
+    "name": "Add a module for creating GUIs with the Renderstack",
+    "status": "Not Started"
+  },
+  {
+    "name": "Made errors on the browser go to the node console",
+    "status": "Done"
+  },
+  {
+    "name": "Add text options to the Renderstack",
+    "status": "Done"
+  },
+  {
+    "name": "Add rotation to the Renderstack drawing",
+    "status": "Canceled"
+  },
+  {
+    "name": "Make a function to print things in order",
+    "status": "Canceled"
+  },
+  {
+    "name": "Add a way to count the number of lines of code I have written in this file",
+    "status": "Done"
+  },
+  {
+    "name": "Combine the Renderstack, Complex shapes, and Animations all together as one module",
+    "status": "Not Started"
+  },
+  {
     "name": "Add fonts for the Renderstack text",
     "status": "Done"
   },
   {
-    "name": "Make the project push to github everytime the todolist gets an item completed",
+    "name": "Pass the screen size to the node side when it updates",
     "status": "Done"
   },
   {
-    "name": "Add layers to complex shapes",
-    "status": "Not Started"
+    "name": "Clump the line counter, github pusher, and todolist in one module",
+    "status": "Done"
   },
   {
-    "name": "Add a clear screen option to Renderstack",
+    "name": "Add layers to the Renderstack",
     "status": "Done"
   },
   {
@@ -392,11 +384,31 @@
     "status": "Done"
   },
   {
-    "name": "Add basic lines to Renderstack",
-    "status": "Done"
+    "name": "Add layers to complex shapes",
+    "status": "Not Started"
+  },
+  {
+    "name": "Add comments to the Renderstack module",
+    "status": "Not Started"
   },
   {
     "name": "Give each rune its own renderstack",
     "status": "Done"
+  },
+  {
+    "name": "For the Renderstack paths, add lines",
+    "status": "Done"
+  },
+  {
+    "name": "For the Renderstack paths, other curves",
+    "status": "Not Started"
+  },
+  {
+    "name": "Get rid of the bridge",
+    "status": "Canceled"
+  },
+  {
+    "name": "For the Renderstack paths, arcs",
+    "status": "In Progress"
   }
 ]

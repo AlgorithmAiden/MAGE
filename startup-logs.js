@@ -105,10 +105,14 @@ module.exports = function () {
     Todo.addItem('Give each rune its own renderstack', 'Done')
     Todo.addItem('Add a function to set a runes renderstack', 'Done')
     Todo.addItem('Clump the line counter, github pusher, and todolist in one module', 'Done')
-    Todo.addItem('Add advanced paths to the Renderstack, with curves', 'In Progress')
+    Todo.addItem('Add advanced paths to the Renderstack', 'In Progress')
     Todo.addItem('Fix github so its pushing from my acc', 'Done')
     Todo.addItem('Fix the Renderstack so it only applies things when needed', 'Not Started')
     Todo.addItem('Add basic lines to Renderstack', 'Done')
+    Todo.addItem('For the Renderstack paths, add lines', 'Done')
+    Todo.addItem('For the Renderstack paths, arcs', 'In Progress')
+    Todo.addItem('For the Renderstack paths, other curves', 'Not Started')
+
 
     Todo.fullLogAndPush(
         { infoColor: 'white' },

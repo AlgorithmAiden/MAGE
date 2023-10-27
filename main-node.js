@@ -34,74 +34,38 @@ module.exports = function (app, BrowserWindow, win) {
         win.webContents.send('renderstack', JSON.stringify({ rune, renderstack }))
     }
 
-    setTimeout(() => setRuneRenderstack('1', [{ mode: 'rect', fill: true, x: 100, y: 100, width: 100, height: 100, color: '#00ff0066' }]), 1000)
-    let a = Colors.createColor(['alpha', 1])
-    let b = Colors.createColor(['alpha', 1])
-    let c = Colors.createColor(['alpha', 1])
-    a.red = 100
-    b.green = 100
-    c.blue = 100
-    setInterval(() => {
-        a.hue += .1
-        b.hue += .2
-        c.hue += .3
-        setRuneRenderstack('2', [
-            {
-                mode: 'rect',
-                x: 0,
-                y: 0,
-                width: canvas.width,
-                height: canvas.height,
-                fill: true,
-                color: {
-                    type: 'linear',
-                    x1: 0,
-                    y1: 0,
-                    x2: canvas.width,
-                    y2: canvas.height,
-                    subColors: [
-                        { place: 1, hex: a.hex },
-                        { place: .5, hex: b.hex },
-                        { place: 0, hex: c.hex }
-                    ]
-                }
-            },
-            {
-                mode: 'line',
-                x1: 0,
-                y1: 0,
-                x2: canvas.width,
-                y2: canvas.height,
-                lineWidth: 10,
-                color: '#000000'
-            }
-        ])
-    }, 1000 / 50)
-    setRuneRenderstack('3', [{
-        mode: 'path',
-        path: [
-            {
-                mode: 'move',
-                x: 100,
-                y: 100
-            },
-            {
-                mode: 'line',
-                x: 100,
-                y: 0
-            },
-            {
-                mode: 'line',
-                x: 0,
-                y: 100
-            },
-            {
-                mode: 'line',
-                x: -100,
-                y: -100
-            }
-        ],
-        fill: true,
-        color: '#ffffff66'
-    }])
+    setTimeout(() =>
+        setRuneRenderstack('3', [{
+            mode: 'path',
+            scale: 100,
+            x: 100,
+            y: 100,
+            path: [
+                {
+                    mode: 'line',
+                    x: 1,
+                    y: 0,
+                },
+                {
+                    mode: 'line',
+                    x: 0,
+                    y: 1
+                },
+                {
+                    mode: 'line',
+                    x: -1,
+                    y: 0,
+                    move: true
+                },
+                {
+                    mode: 'line',
+                    x: 0,
+                    y: -1
+                },
+            ],
+            fill: false,
+            lineWidth: 10,
+            color: '#ffffff'
+        }])
+        , 1000)
 }

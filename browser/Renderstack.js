@@ -1,5 +1,3 @@
-import { symlink } from "original-fs"
-
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
@@ -53,33 +51,37 @@ const render = (() => {
                     ctx.lineTo(item.x2, item.y2)
                 }
                 else if (mode == 'path') {
-                    function tx(X) { return (x + X * scale) }
-                    function ty(Y) { return (y + Y * scale) }
                     const x = item.x
                     const y = item.y
+                    ctx.moveTo(x, y)
                     const scale = item.scale
-                    let lastX = 0
-                    let lastY = 0
+                    let lastX = y
+                    let lastY = x
+                    function tx(X) { return (lastX + X * scale) }
+                    function ty(Y) { return (lastY + Y * scale) }
                     for (const subItem of item.path) {
-                        const subMode = subItem
-                        const move = subItem.move ?? false
-                        if (subMode == 'line' && move)
-                            ctx.moveTo(tx(lastX + subItem.x), ty(lastY + subItem.y))
-                        else if (subMode == 'line' && !move)
-                            ctx.lineTo(tx(lastX + subItem.x), ty(lastY + subItem.y))
+                        const subMode = subItem.mode
+                        const move = subItem.move || false
+                        if (subMode == 'line' && move) {
+                            ctx.moveTo(tx(subItem.x), ty(subItem.y))
+                            lastX += subItem.x * scale
+                            lastY += subItem.y * scale
+                        }
+                        else if (subMode == 'line' && !move) {
+                            ctx.lineTo(tx(subItem.x), ty(subItem.y))
+                            lastX += subItem.x * scale
+                            lastY += subItem.y * scale
+                        }
                         else if (subMode == 'arc' && move) {
 
                         }
                         else if (subMode == 'arc' && !move) {
-
+                            // ctx.arc(tx())
                         }
                         else if (subMode == 'bezierCurve' && move) {
 
                         }
                         else if (subMode == 'bezierCurve' && !move) {
-                        }
-                        else if (subMode == 'move') {
-                            ctx.moveTo(tx(subItem.x), ty(subItem.y))
                         }
                     }
                 }
