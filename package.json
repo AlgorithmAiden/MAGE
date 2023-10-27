@@ -1,0 +1,19 @@
+{
+  "type": "commonjs",
+  "name": "mage",
+  "version": "1.0.0",
+  "description": "Multi Functional Gateway Engine",
+  "main": "setup-node.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AlgorithmAiden",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^27.0.0"
+  },
+  "dependencies": {
+    "simple-git": "^3.20.0"
+  }
+}
