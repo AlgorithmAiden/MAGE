@@ -106,7 +106,7 @@ module.exports = function () {
     Todo.addItem('Add a function to set a runes renderstack', 'Done')
     Todo.addItem('Clump the line counter, github pusher, and todolist in one module', 'Done')
     Todo.addItem('Add advanced paths to the Renderstack, with curves', 'Not Started')
-    Todo.addItem('Fix github so its pushing from my acc', 'In Progress')
+    Todo.addItem('Fix github so its pushing from my acc', 'Done')
 
     Todo.fullLogAndPush(
         { infoColor: 'white' },
