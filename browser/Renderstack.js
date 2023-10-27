@@ -47,12 +47,36 @@ const render = (() => {
                 else if (mode == 'ellipse')
                     ctx.ellipse(item.x, item.y, item.rx, item.ry, item.rotation, item.startAngle, item.endAngle)
                 else if (mode == 'path') {
-                    const path = item.path
                     const x = item.x
                     const y = item.y
                     const scale = item.scale
-                    for (let i = 0; i < path.length; i++)
-                        ctx.lineTo(x + path[i].x * scale, y + path[i].y * scale)
+                    let lastX = 0
+                    let lastY = 0
+                    for (const subItem of item.path) {
+                        const subMode = subItem
+                        const move = subItem.move ?? false
+
+                        if (subMode == 'line' && move) {
+
+                        }
+                        else if (subMode == 'line' && !move) {
+
+                        }
+                        else if (subMode == 'arc' && move) {
+
+                        }
+                        else if (subMode == 'arc' && !move) {
+
+                        }
+                        else if (subMode == 'bezierCurve' && move) {
+
+                        }
+                        else if (subMode == 'bezierCurve' && !move) {
+                        }
+
+
+                        // ctx.lineTo(x + point.x * scale, y + path[i].y * scale)
+                    }
                 }
                 if (item.fill) {
                     ctx.fillStyle = getColor(item.color, item.x, item.y)
@@ -92,7 +116,7 @@ function addToStack(item) {
 function resize() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
-    resizeFunction(canvas.width,canvas.height)
+    resizeFunction(canvas.width, canvas.height)
 }
 
 resize()
