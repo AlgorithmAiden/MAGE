@@ -110,8 +110,9 @@ module.exports = function () {
     Todo.addItem('Fix the Renderstack so it only applies things when needed', 'Not Started')
     Todo.addItem('Add basic lines to Renderstack', 'Done')
     Todo.addItem('For the Renderstack paths, add lines', 'Done')
-    Todo.addItem('For the Renderstack paths, arcs', 'In Progress')
-    Todo.addItem('For the Renderstack paths, other curves', 'Not Started')
+    Todo.addItem('For the Renderstack paths, add arcs', 'In Progress')
+    Todo.addItem('For the Renderstack paths, add other curves', 'Not Started')
+    Todo.addItem('Add detecton for removing items from the Todo', 'In Progress')
 
 
     Todo.fullLogAndPush(
