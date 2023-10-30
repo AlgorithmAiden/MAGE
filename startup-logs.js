@@ -113,6 +113,7 @@ module.exports = function () {
     Todo.addItem('For the Renderstack paths, add arcs', 'In Progress')
     Todo.addItem('For the Renderstack paths, add other curves', 'Not Started')
     Todo.addItem('Add detecton for removing items from the Todo', 'In Progress')
+    Todo.addItem('Change Todo to use text files', 'In Progress')
 
 
     Todo.fullLogAndPush(

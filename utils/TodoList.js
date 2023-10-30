@@ -166,7 +166,7 @@ function countLines(filePaths) {
 /**
  * checks if any items on the list have changed, and pushes to github if they have
  */
-function pushIfNeeded() {
+const pushIfNeeded = ((push = true) => {
     //create a function to commit to git
     const git = require('simple-git')
 
@@ -193,7 +193,7 @@ function pushIfNeeded() {
     //check if the project needs to be pushed
     const fs = require('fs')
         ;
-    (async () => {
+    return async () => {
         const path = './oldTodo.json'
         if (fs.existsSync(path)) {
             try {
@@ -214,7 +214,9 @@ function pushIfNeeded() {
                 }
                 if (changes.length > 0) {
                     colorLog({ color: 'green', text: 'Changes detected, pushing to github...' })
-                    pushToGithub(changes.join('\n'))
+                    if (push)
+                        pushToGithub(changes.join('\n'))
+                    else colorLog({ text: '"Pushed to github"', color: 'red' })
                 } else
                     colorLog({ color: 'blue', text: 'No changes detected' })
             } catch (error) {
@@ -230,8 +232,8 @@ function pushIfNeeded() {
         } catch (error) {
             colorLog([{ color: 'yellow', text: 'Error writing to old todo: ' }, { color: 'red', text: error }])
         }
-    })()
-}
+    }
+})()
 
 /**
  * logs the number of lines in the combined files
