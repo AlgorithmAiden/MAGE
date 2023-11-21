@@ -12,6 +12,7 @@ Make the browser invisible===Done
 Add key inputs===Not Started
 Add mouse inputs===Not Started
 Create the renderstack module===In Progress
+Add the Color module===Done
 Add the MoreMath module===Done
 Create a renderstack function for the node side===Done
 Make the renderstack only render when needed===Not Started
