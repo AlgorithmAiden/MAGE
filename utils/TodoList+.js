@@ -128,11 +128,13 @@ const pushIfChanged = (() => {
 
         //if changes: push, and save
         if (changes.length > 0) {
-            let fail = !pushToGithub(changes.join('\n'))
+            let fail = !await pushToGithub(changes.join('\n'))
             if (fail)
                 colorLog({ text: 'Error pushing to github, oldTodo is not saved', color: 'red' })
-            else
+            else {
                 fs.writeFileSync(oldPath, newTodo.map(item => `${item[0]}===${item[1]}`).join('\n'), 'utf8')
+                colorLog({ text: 'oldTodo saved', color: 'green' })
+            }
         }
 
         //otherwise, let the user know there is no change
