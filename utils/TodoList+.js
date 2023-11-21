@@ -55,7 +55,7 @@ const pushIfChanged = (() => {
             await simpleGit.push('origin', 'main')  // Push to the main branch on the remote repository
             colorLog([{ color: 'green', text: 'Pushed to GitHub successfully with message:\n' }, { color: 'yellow', text: commitMessage }])
         } catch (error) {
-            colorLog({ color: 'red', text: JSON.stringify(error) })
+            colorLog([{ text: 'Error pushing to github: ', color: 'blue' }, { color: 'red', text: JSON.stringify(error) }])
         }
     }
 
