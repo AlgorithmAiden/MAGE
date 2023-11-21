@@ -108,4 +108,5 @@ For the Renderstack paths, add arcs===In Progress
 For the Renderstack paths, add other curves===Not Started
 Add detection for removing items from the Todo===Done
 Change Todo to use text files===Done
-Fix Todo reading of files to trim off extra===In Progress
+Fix Todo reading of files to trim off extra===Done
+Redo the entire TodoList module===Done

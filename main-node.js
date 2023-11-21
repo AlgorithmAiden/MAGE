@@ -5,9 +5,9 @@ const { ipcMain } = require('electron');
 module.exports = function (app, BrowserWindow, win) {
 
     //import the needed things
-    const Misc = require('./utils/misc')
-    const MoreMath = require('./utils/moremath')
-    const Colors = require('./utils/colors')
+    const Misc = require('./utils/Misc')
+    const MoreMath = require('./utils/Moremath')
+    const Colors = require('./utils/Colors')
 
     //store the canvas size
     let canvas = { width: 0, height: 0 }
