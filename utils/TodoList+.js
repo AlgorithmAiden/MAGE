@@ -54,8 +54,10 @@ const pushIfChanged = (() => {
             await simpleGit.commit(commitMessage)  // Use the custom commit message
             await simpleGit.push('origin', 'main')  // Push to the main branch on the remote repository
             colorLog([{ color: 'green', text: 'Pushed to GitHub successfully with message:\n' }, { color: 'yellow', text: commitMessage }])
+            return true
         } catch (error) {
             colorLog([{ text: 'Error pushing to github: ', color: 'blue' }, { color: 'red', text: JSON.stringify(error) }])
+            return false
         }
     }
 
@@ -126,8 +128,11 @@ const pushIfChanged = (() => {
 
         //if changes: push, and save
         if (changes.length > 0) {
-            pushToGithub(changes.join('\n'))
-            fs.writeFileSync(oldPath, newTodo.map(item => `${item[0]}===${item[1]}`).join('\n'), 'utf8')
+            let fail = !pushToGithub(changes.join('\n'))
+            if (fail)
+                colorLog({ text: 'Error pushing to github, oldTodo is not saved', color: 'red' })
+            else
+                fs.writeFileSync(oldPath, newTodo.map(item => `${item[0]}===${item[1]}`).join('\n'), 'utf8')
         }
 
         //otherwise, let the user know there is no change
