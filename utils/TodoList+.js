@@ -5,6 +5,16 @@ const git = require('simple-git')
 let oldPath = './oldTodo.txt'
 let newPath = './todo.txt'
 
+//check if the todo files exist, and warn if they don't
+if (!fs.existsSync(oldPath)) {
+    colorLog([{ text: 'No oldTodo.txt detected, creating file at ', color: 'blue' }, { text: oldPath, color: 'yellow' }])
+    fs.writeFileSync(oldPath, 'Example item===Example state', 'utf8')
+}
+if (!fs.existsSync(newPath)) {
+    colorLog([{ text: 'No Todo.txt detected, creating file at ', color: 'blue' }, { text: newPath, color: 'yellow' }])
+    fs.writeFileSync(newPath, '.Status Name===Color\nExample item===Example state', 'utf8')
+}
+
 let files = []
 
 let colorCode = {}
@@ -63,15 +73,6 @@ const pushIfChanged = (() => {
 
     //the real function
     return async (push = true) => {
-        //check if the todo files exist, and warn if they don't
-        if (!fs.existsSync(oldPath)) {
-            colorLog([{ text: 'No oldTodo.txt detected, creating file at ', color: 'blue' }, { text: oldPath, color: 'yellow' }])
-            fs.writeFileSync(oldPath, 'Example item===Example state', 'utf8')
-        }
-        if (!fs.existsSync(newPath)) {
-            colorLog([{ text: 'No Todo.txt detected, creating file at ', color: 'blue' }, { text: newPath, color: 'yellow' }])
-            fs.writeFileSync(newPath, '.Status Name===Color\nExample item===Example state', 'utf8')
-        }
 
         //grad the todo lists
         let oldTodo = fs.readFileSync(oldPath, 'utf8')
