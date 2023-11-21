@@ -128,7 +128,7 @@ const pushIfChanged = (() => {
 
         //if changes: push, and save
         if (changes.length > 0) {
-            let fail = !await pushToGithub(changes.join('\n'))
+            let fail = ! pushToGithub(changes.join('\n'))
             if (fail)
                 colorLog({ text: 'Error pushing to github, oldTodo is not saved', color: 'red' })
             else {
