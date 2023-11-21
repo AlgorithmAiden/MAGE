@@ -263,7 +263,7 @@ const pushIfNeeded = (() => {
         newTodo.forEach(newItem => {
             let included = false
             oldTodo.forEach(oldItem => {
-                if (newItem[0] == oldItem[0] && newItem[1] == oldItem[1])
+                if (newItem[0] == oldItem[0])
                     included = true
             })
             if (!included)
@@ -274,7 +274,7 @@ const pushIfNeeded = (() => {
         oldTodo.forEach(oldItem => {
             let included = false
             newTodo.forEach(newItem => {
-                if (oldItem[0] == newItem[0] && oldItem[1] == newItem[1])
+                if (oldItem[0] == newItem[0])
                     included = true
             })
             if (!included)
