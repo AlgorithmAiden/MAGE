@@ -1,0 +1,106 @@
+Setup Electron===Done
+Link Github===Done
+Setup the RUNE system===Not Started
+Add todoList===Done
+Make the browser stay on top of the screen===Done
+Make the browser invisible===Done
+Add key inputs===Not Started
+Add mouse inputs===Not Started
+Create the renderstack module===In Progress
+Add the Color module===Done
+Add the MoreMath module===Done
+Create a renderstack function for the node side===Done
+Make the renderstack only render when needed===Not Started
+Add many render layers===Not Started
+Make the new layers have names===Not Started
+Give the new layers a z index===Not Started
+Turn the project into an application===Not Started
+Make the project auto publish the application===Not Started
+Organize the project===Done
+Add comments to everything===Done
+Hide the electron icon===Done
+Make the electron project auto start===Not Started
+Make the browser fill the screen===Done
+Switch to the new github===Done
+Make the node side die if the browser does===Done
+Give the browser a .js file===Done
+Add canvas to the browser===Done
+Make the canvas always fill the screen===Done
+Let the mouse / key inputs go thru the browser===Done
+Hide the bar at the top of the browser===Done
+Create the acronym for MAGE===Done
+Create functions to talk node to browser===Done
+Create functions to talk browser to node===Done
+Add feature to the renderstack module: Fill Rect===Done
+Add feature to the renderstack module: Line Rect===Done
+Add feature to the renderstack module: Fill Circle===Done
+Add feature to the renderstack module: Line Circle===Done
+Add feature to the renderstack module: Glowing===Done
+Add feature to the renderstack module: Gradients===Done
+Add feature to the renderstack module: Fill Complex shapes===Done
+Add feature to the renderstack module: Line Complex shapes===Done
+Create a bridge to go from browser to node, and vice versa===Done
+Add the runes===Not Started
+Create a good name for the runes===Not Started
+Sandbox the runes===Not Started
+Create a hub for all the runes===Not Started
+Create a good name for the hub for runes===Not Started
+Give the hub website a nice gui===Not Started
+Give the hub site apis for MAGE===Not Started
+Add a way to upload RUNES on the webpage===Not Started
+Get rid of the bridge===Canceled
+Add an api for clicking===Not Started
+Add an api for typing===Not Started
+Add an api for mouse movement===Not Started
+Add an api for reading the screen===Not Started
+Create a RUNE for managing other RUNEs===Not Started
+Make a better colors module===Done
+Make a todolist module that uses files to store the list===Done
+Pass key inputs to the RUNEs===Not Started
+Pass mouse inputs to the RUNEs===Not Started
+Make require work on the browser side===Canceled
+Add a debug mode for the browser===Done
+Make the Renderstack have some kind of scaling options===Not Started
+Make Renderstack gradients x/y relative to the main object===Done
+Make the Renderstack have autocomplete for the objects===Not Started
+Make the Renderstack rotation args fit to the rest of the system (r0=up,r1/4=right)===Not Applicable
+Create a module for the Renderstack that adds compound shapes===Not Started
+Create a module for the Renderstack to add animations===Not Started
+Fix the Color module to use object setters===Not Started
+Add a module for creating GUIs with the Renderstack===Not Started
+Add TLDR to the Todo module===Done
+Made errors on the browser go to the node console===Done
+Add curved lines to the Renderstack===In Progress
+Add clearrects to the Renderstack===Done
+Add clipping to the Renderstack===Not Started
+Add rotation to the Renderstack drawing===Canceled
+Add a way to count the number of lines of code I have written in this file===Done
+Add text to the Renderstack===Done
+Combine the Renderstack, Complex shapes, and Animations all together as one module===Not Started
+Add fonts for the Renderstack text===Done
+Make the text wrap in a box===Not Applicable
+Add line caps===Done
+Pass the screen size to the node side when it updates===Done
+Add line joins===Done
+Add text options to the Renderstack===Done
+Make console.log from browser redirect to the node side===Done
+Add layers to the Renderstack===Done
+Add layers to complex shapes===Not Started
+Add a clear screen option to Renderstack===Done
+Add comments to the Renderstack module===Not Started
+Turn all the startup logging its own file===Done
+Make the project push to github every time the todolist gets an item completed===Done
+Make a function to print things in order===Canceled
+Give each rune its own renderstack===Done
+Add a function to set a runes renderstack===Done
+Clump the line counter, github pusher, and todolist in one module===Done
+Add advanced paths to the Renderstack===In Progress
+Fix github so its pushing from my acc===Done
+Fix the Renderstack so it only applies things when needed===Not Started
+Add basic lines to Renderstack===Done
+For the Renderstack paths, add lines===Done
+For the Renderstack paths, add arcs===In Progress
+For the Renderstack paths, add other curves===Not Started
+Add detection for removing items from the Todo===Done
+Change Todo to use text files===Done
+Fix Todo reading of files to trim off extra===In Progress

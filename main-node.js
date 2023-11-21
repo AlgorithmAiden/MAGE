@@ -26,7 +26,7 @@ module.exports = function (app, BrowserWindow, win) {
     ipcMain.on('canvasSize', (event, data) => {
         data = JSON.parse(data)
         canvas = data
-        Misc.colorLog([{ color: 'yellow', text: 'Canvas size: ' }, { color: 'blue', text: `${data.width}px / ${data.height}px` }])
+        Misc.colorLog([{ color: 'blue', text: 'Canvas size: ' }, { color: 'yellow', text: `${data.width}px / ${data.height}px` }])
     })
 
     //send the renderstack

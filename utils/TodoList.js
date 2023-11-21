@@ -1,8 +1,12 @@
 const fs = require('fs')
 
-let list = []
+const newPath = './Todo.txt'
+const oldPath = './oldTodo.txt'
 
 let colorCode = {}
+let list = []
+if (fs.existsSync(newPath))
+    fs.readFileSync(newPath, 'utf8').split('\n').forEach(item => { let temp = item.split('==='); if (item[0] == '.') colorCode[temp[0].slice(1)] = temp[1].split('\r')[0]; else list.push({ name: temp[0].split('\r')[0], status: temp[1].split('\r')[0] }) })
 
 function colorLog(texts) {
     const colors = {
@@ -140,13 +144,6 @@ function logList(config = {}) {
 }
 
 /**
- * @returns the todo list
- */
-function read() {
-    return list
-}
-
-/**
  * @param {Array} filePaths an array of file paths
  * @returns the total number of lines
  */
@@ -166,7 +163,7 @@ function countLines(filePaths) {
 /**
  * checks if any items on the list have changed, and pushes to github if they have
  */
-const pushIfNeeded = ((push = true) => {
+const pushIfNeeded = (() => {
     //create a function to commit to git
     const git = require('simple-git')
 
@@ -183,55 +180,121 @@ const pushIfNeeded = ((push = true) => {
 
             await simpleGit.add('./*')  // Stage all changes (new, modified, deleted)
             await simpleGit.commit(commitMessage)  // Use the custom commit message
-            await simpleGit.push('origin', 'main')  // Push to the main branch on the remote repository
+            //await simpleGit.push('origin', 'main')  // Push to the main branch on the remote repository
             colorLog([{ color: 'green', text: 'Pushed to GitHub successfully with message:\n' }, { color: 'yellow', text: commitMessage }])
         } catch (error) {
             colorLog({ color: 'red', text: JSON.stringify(error) })
         }
     }
 
-    //check if the project needs to be pushed
+    //the real function
     const fs = require('fs')
-        ;
-    return async () => {
-        const path = './oldTodo.json'
-        if (fs.existsSync(path)) {
-            try {
-                const data = fs.readFileSync(path, 'utf8')
-                const oldTodo = JSON.parse(data)
-                const newTodo = list
-                let changes = []
-                for (const newItem of newTodo) {
-                    let included = false
-                    for (const oldItem of oldTodo)
-                        if (oldItem.name == newItem.name) {
-                            if (oldItem.status != newItem.status)
-                                changes.push(`Item '${oldItem.name}' changed from '${oldItem.status}' to '${newItem.status}'`)
-                            included = true
-                        }
-                    if (!included)
-                        changes.push(`New item '${newItem.name}' with status '${newItem.status}'`)
-                }
-                if (changes.length > 0) {
-                    colorLog({ color: 'green', text: 'Changes detected, pushing to github...' })
-                    if (push)
-                        pushToGithub(changes.join('\n'))
-                    else colorLog({ text: '"Pushed to github"', color: 'red' })
-                } else
-                    colorLog({ color: 'blue', text: 'No changes detected' })
-            } catch (error) {
-                colorLog([{ color: 'yellow', text: 'Error reading old todo: ' }, { color: 'red', text: error }])
-                return
-            }
-        } else {
-            colorLog({ color: 'red', text: 'Old todo missing' })
+    return async (push = true) => {
+        // if (!fs.existsSync(oldPath)) {
+        //     colorLog([{ text: 'No oldTodo.txt detected, creating file at ', color: 'blue' }, { text: oldPath, color: 'yellow' }])
+        //     fs.writeFileSync(oldPath, 'Example item===Example state', 'utf8')
+        // }
+        // if (!fs.existsSync(newPath)) {
+        //     colorLog([{ text: 'No Todo.txt detected, creating file at ', color: 'blue' }, { text: newPath, color: 'yellow' }])
+        //     fs.writeFileSync(newPath, 'Example item===Example state', 'utf8')
+        // }
+        // const newTodo = {}
+        // const oldTodo = {}
+        // fs.readFileSync(newPath, 'utf8').split('\n').forEach(item => { if (item[0] == '.') return; let temp = item.split('==='); newTodo[temp[0]] = temp[1] })
+        // fs.readFileSync(oldPath, 'utf8').split('\n').forEach(item => { if (item[0] == '') return; let temp = item.split('==='); oldTodo[temp[0]] = temp[1] })
+        // let changes = []
+        // const newKeys = Object.keys(newTodo)
+        // const oldKeys = Object.keys(oldTodo)
+        // for (const key of newKeys)
+        //     if (oldKeys.includes(key)) {
+        //         if (oldTodo[key] != newTodo[key])
+        //             changes.push(`Changed item '${key}' from status '${oldTodo[key]}' to status '${newTodo[key]}'`)
+        //     }
+        //     else changes.push(`Added item '${key}' with status '${newTodo[key]}'`)
+        // for (const key of oldKeys)
+        //     if (!newKeys.includes(key))
+        //         changes.push(`Removed item '${key}' with status '${oldTodo[key]}'`)
+        // changes = changes.join('\n')
+        // if (changes.length > 0) {
+        //     colorLog([{ text: 'Pushing to github with message:\n', color: 'blue' }, { text: changes, color: 'yellow' }])
+        //     let out = []
+        //     list.forEach((item) => {
+        //         if (item.name != '')
+        //             out.push(`${item.name}===${item.status}`)
+        //     })
+        //     fs.writeFileSync(oldPath, out.join('\n'), 'utf8')
+        // }
+        // else
+        //     colorLog({ text: 'No changes detected in Todo', color: 'blue' })
+
+        //check if the todo files exist, and warn if they don't
+        if (!fs.existsSync(oldPath)) {
+            colorLog([{ text: 'No oldTodo.txt detected, creating file at ', color: 'blue' }, { text: oldPath, color: 'yellow' }])
+            fs.writeFileSync(oldPath, 'Example item===Example state', 'utf8')
         }
-        try {
-            fs.writeFileSync(path, JSON.stringify(list, null, 2))
-            colorLog({ color: 'green', text: 'Old todo updated' })
-        } catch (error) {
-            colorLog([{ color: 'yellow', text: 'Error writing to old todo: ' }, { color: 'red', text: error }])
+        if (!fs.existsSync(newPath)) {
+            colorLog([{ text: 'No Todo.txt detected, creating file at ', color: 'blue' }, { text: newPath, color: 'yellow' }])
+            fs.writeFileSync(newPath, 'Example item===Example state', 'utf8')
         }
+
+        //grad the todo lists
+        let oldTodo = fs.readFileSync(oldPath, 'utf8')
+        let newTodo = fs.readFileSync(newPath, 'utf8')
+
+        //break into lines
+        oldTodo = oldTodo.split('\n')
+        newTodo = newTodo.split('\n')
+
+        //filter out the color commands
+        newTodo = newTodo.filter(item => item[0] != '.')
+
+        //trim off the '\r' at the end of some names
+        oldTodo = oldTodo.map(item => item.split('\r')[0])
+        newTodo = newTodo.map(item => item.split('\r')[0])
+
+        //split into the name / status
+        oldTodo = oldTodo.map(item => item.split('==='))
+        newTodo = newTodo.map(item => item.split('==='))
+
+        //hold all the changes
+        let changes = []
+
+        //check for added items
+        newTodo.forEach(newItem => {
+            let included = false
+            oldTodo.forEach(oldItem => {
+                if (newItem[0] == oldItem[0] && newItem[1] == oldItem[1])
+                    included = true
+            })
+            if (!included)
+                changes.push(`Added item '${newItem[0]}' with status '${newItem[1]}'`)
+        })
+
+        //check for removed items
+        oldTodo.forEach(oldItem => {
+            let included = false
+            newTodo.forEach(newItem => {
+                if (oldItem[0] == newItem[0] && oldItem[1] == newItem[1])
+                    included = true
+            })
+            if (!included)
+                changes.push(`Removed item '${oldItem[0]}' with status '${oldItem[1]}'`)
+        })
+
+        //check for changed statuses
+        newTodo.forEach(newItem =>
+            oldTodo.forEach(oldItem => {
+                if (newItem[0] == oldItem[0] && newItem[1] != oldItem[1])
+                    changes.push(`Item '${newItem[0]}' changed status from '${oldItem[1]}' to '${newItem[1]}'`)
+            })
+        )
+
+        //if changes: push, and save
+        if (changes.length > 0) {
+            pushToGithub(changes.join('\n'))
+            fs.writeFileSync(oldPath, newTodo.map(item => `${item[0]}===${item[1]}`).join('\n'), 'utf8')
+        } else
+            colorLog({ text: 'No changes in todo list detected', color: 'blue' })
     }
 })()
 
@@ -245,10 +308,16 @@ function logLines(filePaths) {
     colorLog([{ color: 'blue', text: '\nThere are ' }, { color: 'yellow', text: lines }, { color: 'blue', text: ' lines of code in this project\n' }])
 }
 
-function fullLogAndPush(config, filePaths) {
+/**
+ * Does all the logging at once
+ * @param {object} config config for logList
+ * @param {Array} filePaths paths for logLines
+ * @param {boolean} push push for pushIfNeeded
+ */
+function fullLogAndPush(config, filePaths, push) {
     logList(config)
     logLines(filePaths)
-    pushIfNeeded()
+    pushIfNeeded(push)
 }
 
 module.exports = {
@@ -257,7 +326,6 @@ module.exports = {
     updateItem,
     setStatusColor,
     logList,
-    read,
     pushIfNeeded,
     logLines,
     fullLogAndPush
