@@ -1,0 +1,2 @@
+.Status Name===Color
+Example item===Example state
