@@ -52,7 +52,9 @@ const pushIfChanged = (() => {
 
             await simpleGit.add('./*')  // Stage all changes (new, modified, deleted)
             await simpleGit.commit(commitMessage)  // Use the custom commit message
+            console.log(1)
             await simpleGit.push('origin', 'main')  // Push to the main branch on the remote repository
+            console.log(2)
             colorLog([{ color: 'green', text: 'Pushed to GitHub successfully with message:\n' }, { color: 'yellow', text: commitMessage }])
             return true
         } catch (error) {
