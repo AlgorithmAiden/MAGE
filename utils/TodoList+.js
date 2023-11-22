@@ -12,7 +12,14 @@ if (!fs.existsSync(oldPath)) {
 }
 if (!fs.existsSync(newPath)) {
     colorLog([{ text: 'No Todo.txt detected, creating file at ', color: 'blue' }, { text: newPath, color: 'yellow' }])
-    fs.writeFileSync(newPath, '.Status Name===Color\nExample item===Example state', 'utf8')
+    const exampleFile = [
+        '.status name===color',
+        'example item===status',
+        '#this is a comment',
+        'in fact, any line without a triple equals is a comment',
+        'including blank lines' 
+    ].join('\n')
+    fs.writeFileSync(newPath, exampleFile, 'utf8')
 }
 
 let files = []
@@ -82,14 +89,11 @@ const pushIfChanged = (() => {
         oldTodo = oldTodo.split('\n')
         newTodo = newTodo.split('\n')
 
-        //ignore lines that start with '#'
-        newTodo = newTodo.filter(item => item[0] != '#')
-
-        //ignore lines with no length
-        newTodo = newTodo.filter(item => item.length > 0)
-
         //filter out any line without '==='
         newTodo=newTodo.filter(item=>item.includes('==='))
+        
+        //ignore lines that start with '#'
+        newTodo = newTodo.filter(item => item[0] != '#')
 
         //filter out the color commands
         newTodo = newTodo.filter(item => item[0] != '.')
