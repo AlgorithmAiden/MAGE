@@ -83,6 +83,15 @@ const pushIfChanged = (() => {
         oldTodo = oldTodo.split('\n')
         newTodo = newTodo.split('\n')
 
+        //ignore lines that start with '#'
+        newTodo = newTodo.filter(item => item[0] != '#')
+
+        //ignore lines with no length
+        newTodo = newTodo.filter(item => item.length > 0)
+
+        //filter out any line without '==='
+        newTodo=newTodo.filter(item=>item.includes('==='))
+
         //filter out the color commands
         newTodo = newTodo.filter(item => item[0] != '.')
 
