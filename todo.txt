@@ -92,4 +92,4 @@ Make the TodoList module ignore lines that start with #===In Progress
 this is also a comment
 Make the TodoList module ignore empty lines===In Progress
 
-Make the todoList module ignore lines that do not include '==='===In Progress
+Make the todoList module ignore lines that do not include triple equal'===In Progress
