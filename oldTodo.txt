@@ -106,4 +106,4 @@ Change Todo to use text files===Done
 Fix Todo reading of files to trim off extra===Done
 Redo the entire TodoList module===Done
 Merge startup-logs.js with main-node.js===In Progress
-Make TodoList+ not save the new list if a push fails===In Progress
+Make TodoList+ not save the new list if a push fails===Done
