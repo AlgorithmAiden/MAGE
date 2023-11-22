@@ -1,3 +1,8 @@
+.Done===green
+.In Progress===yellow
+.Not Started===red
+.Canceled===blue
+.Not Applicable===magenta
 Setup Electron===Done
 Link Github===Done
 Setup the RUNE system===Not Started
