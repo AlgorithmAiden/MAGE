@@ -73,7 +73,7 @@ Add detection for removing items from the Todo===Done
 Change Todo to use text files===Done
 Fix Todo reading of files to trim off extra===Done
 Redo the entire TodoList module===Done
-Merge startup-logs.js with main-node.js===In Progress
+Merge startup-logs.js with main-node.js===Done
 Make TodoList+ not save the new list if a push fails===Done
 Redo Renderstack from the ground up, making use of recursive objects for complex shapes===Not Started
 Add relative values to the new Renderstack===Not Started

@@ -4,6 +4,30 @@ const { ipcMain } = require('electron');
 //export everything so setup-node can run it
 module.exports = function (app, BrowserWindow, win) {
 
+    //grab the Todo
+    const Todo = require('./utils/TodoList+')
+
+    //set the files to scan
+    Todo.setFilesToCount([
+        './browser/index.html',
+        './browser/Renderstack.js',
+        './browser/script.js',
+        './utils/Colors.js',
+        './utils/Misc.js',
+        './utils/MoreMath.js',
+        './utils/TodoList+.js',
+        './main-node.js',
+        './preload.js',
+        './setup-node.js',
+        './startup-logs.js',
+    ])
+
+    //log the list / line count
+    Todo.log()
+
+    //check for changes, and push if needed
+    Todo.pushIfChanged()
+
     //import the needed things
     const Misc = require('./utils/Misc')
     const MoreMath = require('./utils/Moremath')
@@ -28,44 +52,4 @@ module.exports = function (app, BrowserWindow, win) {
         canvas = data
         Misc.colorLog([{ color: 'blue', text: 'Canvas size: ' }, { color: 'yellow', text: `${data.width}px / ${data.height}px` }])
     })
-
-    //send the renderstack
-    function setRuneRenderstack(rune, renderstack) {
-        win.webContents.send('renderstack', JSON.stringify({ rune, renderstack }))
-    }
-
-    setTimeout(() =>
-        setRuneRenderstack('3', [{
-            mode: 'path',
-            scale: 100,
-            x: 100,
-            y: 100,
-            path: [
-                {
-                    mode: 'line',
-                    x: 1,
-                    y: 0,
-                },
-                {
-                    mode: 'line',
-                    x: 0,
-                    y: 1
-                },
-                {
-                    mode: 'line',
-                    x: -1,
-                    y: 0,
-                    move: true
-                },
-                {
-                    mode: 'line',
-                    x: 0,
-                    y: -1
-                },
-            ],
-            fill: false,
-            lineWidth: 10,
-            color: '#ffffff'
-        }])
-        , 1000)
 }

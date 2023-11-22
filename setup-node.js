@@ -59,7 +59,7 @@ app.whenReady().then(() => {
     //then create a window
     createWindow()
 
-    //run everytime the app "activates"
+    //run every time the app "activates"
     app.on('activate', () => {
 
         //create a new browser window if needed
@@ -70,10 +70,6 @@ app.whenReady().then(() => {
 
     //run the main-node file, passing in the needed objects
     require('./main-node.js')(app, BrowserWindow, win)
-
-    //run all the logs
-    require('./startup-logs.js')()
-
 })
 
 //if the window is closes, kill the node side
