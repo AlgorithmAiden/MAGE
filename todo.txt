@@ -87,3 +87,5 @@ Add distortion effects to the Renderstack===Not Started
 Add arcs to the Renderstack paths===Not Started
 Add elliptical curves to the Renderstack paths===Not Started
 Add color gradients to the Renderstack paths===Not Started
+Make the TodoList module ignore lines that start with #===In Progress
+Make the TodoList module ignore empty lines===In Progress
