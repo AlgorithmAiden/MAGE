@@ -107,3 +107,10 @@ Fix Todo reading of files to trim off extra===Done
 Redo the entire TodoList module===Done
 Merge startup-logs.js with main-node.js===In Progress
 Make TodoList+ not save the new list if a push fails===Done
+Redo Renderstack from the ground up, making use of recursive objects for complex shapes===Not Started
+Add relative values to the new Renderstack===Not Started
+Clean up the whole start part of the node side, so it waits for the browser===Not Started
+Add timing function to the Renderstack values===Not Started
+Add a way to copy Renderstack complex objects===Not Started
+Add a good name for the Renderstack object system===Not Started
+Make a better name for the extended Renderstack system===Not Started
